@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <style>
+        
+        :root {
+          --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        html {
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        body {
+          background: #ececec !important;
+            width: 400px;
+            color: #FF512F;
+            margin: auto;
+        }
+        
+        .card {
+          background: white;
+          font-family: "Segoe UI", system-ui, sans-serif;  
+          border: 1px solid #dd2476;
+          color: rgba(255, 81, 47, 0.8);
+          margin-bottom: 2rem;
+            padding: 25px 15px;
+        }
+        
+        .btn {
+          border: 2px solid;
+          border-image-slice: 1;
+          background: var(--gradient) !important;
+          -webkit-background-clip: text !important;
+          -webkit-text-fill-color: transparent !important;
+          border-image-source:  var(--gradient) !important; 
+          text-decoration: none;
+          transition: all .4s ease;
+            padding: 5px 10px;
+        }
+        
+        .btn:hover, .btn:focus {
+            background: var(--gradient) !important;
+            -webkit-background-clip: none !important;
+            -webkit-text-fill-color: #fff !important;
+            border: 2px solid #fff !important; 
+            box-shadow: #222 1px 0 10px;
+            text-decoration: underline;
+        }
+        
+        .header__btn > svg {
+            width: 40px;
+        }
+        
+        .reversed {
+            transform: scaleX(-1);
+        }
+        
+        .upper {
+            text-transform: uppercase;
+        }
+        
+        .nav__list {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        
+        .card-subtitle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .circle {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-left: 10px;
+            border-radius: 100%;
+            border: 2px solid #cdc7a8;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <nav class="header__nav">
+                <div class="nav__logo"></div>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/lk/" class="header__btn">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                 viewBox="0 0 310.048 310.048" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path style="fill:#FF512F" d="M145.987,0.06c-0.288,0.016-0.566,0.087-0.843,0.152c-0.375,0.087-0.74,0.19-1.088,0.354
+                                        c-0.261,0.12-0.5,0.277-0.74,0.435c-0.179,0.12-0.386,0.185-0.549,0.326l-95.94,83.103c-0.114,0.098-0.158,0.245-0.261,0.348
+                                        c-0.305,0.31-0.549,0.658-0.767,1.023c-0.152,0.261-0.315,0.517-0.43,0.794c-0.163,0.419-0.228,0.859-0.283,1.311
+                                        c-0.027,0.218-0.136,0.413-0.136,0.636v152.169c0,38.231,31.106,69.337,69.337,69.337h81.472
+                                        c38.231,0,69.337-31.106,69.337-69.337V69.337C265.097,31.106,237.238,0,202.999,0h-56.67C146.21,0,146.107,0.054,145.987,0.06z
+                                         M136.007,21.577l-21.163,73.27C101.659,78.97,85.102,76.103,71.744,77.24L136.007,21.577z M254.214,69.337v171.374
+                                        c0,32.237-26.227,58.459-58.459,58.459h-81.472c-32.232,0-58.459-26.222-58.459-58.459V92.018
+                                        c9.35-3.911,38.781-13.01,56.305,18.079c0.974,1.719,2.79,2.768,4.737,2.768c0.212,0,0.424-0.011,0.631-0.038
+                                        c2.176-0.256,3.987-1.789,4.596-3.894l28.327-98.055h52.574C231.234,10.878,254.214,37.1,254.214,69.337z"/>
+                                    <path style="fill:#FF512F;" d="M120.26,143.336c0,19.689,16.018,35.707,35.707,35.707s35.707-16.018,35.707-35.707
+                                        s-16.018-35.707-35.707-35.707S120.26,123.641,120.26,143.336z M155.968,118.506c13.69,0,24.829,11.139,24.829,24.824
+                                        c0,13.696-11.139,24.829-24.829,24.829s-24.829-11.139-24.829-24.829C131.139,129.646,142.278,118.506,155.968,118.506z"/>
+                                    <path style="fill:#FF512F;" d="M155.952,186.185c-10.041,0-19.619,1.746-26.967,4.917l-25.536,11.02
+                                        c-1.991,0.859-3.285,2.823-3.285,4.993v25.841c0,17.247,15.17,31.275,33.815,31.275h43.98c18.645,0,33.815-13.886,33.815-30.948
+                                        v-25.509c0-2.132-1.246-4.063-3.176-4.944l-24.829-11.351C176.305,188.061,166.427,186.185,155.952,186.185z M200.895,233.281
+                                        c0,11.068-10.291,20.07-22.937,20.07h-43.98c-12.646,0-22.937-9.154-22.937-20.396v-22.268l22.251-9.605
+                                        c6.021-2.6,14.065-4.025,22.659-4.025c8.822,0,17.307,1.566,23.296,4.302l21.647,9.899V233.281z"/>
+                                </g>
+                            </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <form action="/logout/" method="POST" style="cursor: pointer">
+                            {%  csrf_token %}
+                            <input type="hidden" name="next" value="/login/">
+                            <span onclick="this.parentElement.submit()" class="header__btn">
+                                <svg class="reversed" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 12L2 12M2 12L5.5 9M2 12L5.5 15" stroke="#FF512F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.3531 21.8897 19.1752 21.9862 17 21.9983M9.00195 17C9.01406 19.175 9.11051 20.3529 9.87889 21.1213C10.5202 21.7626 11.4467 21.9359 13 21.9827" stroke="#FF512F" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        </form>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/map/" class="header__btn">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 12C2 16.714 2 19.0711 3.46447 20.5355C4.92893 22 7.28595 22 12 22C16.714 22 19.0711 22 20.5355 20.5355C22 19.0711 22 16.714 22 12C22 7.28595 22 4.92893 20.5355 3.46447C19.0711 2 16.714 2 12 2C7.28595 2 4.92893 2 3.46447 3.46447C2.49073 4.43821 2.16444 5.80655 2.0551 8" stroke="#FF512F" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M14.5193 14.5L13.4227 17.3618C13.1045 18.1922 11.94 18.2192 11.6917 17.4019L10.6352 13.9249C10.553 13.6545 10.3455 13.447 10.0751 13.3648L6.5981 12.3083C5.78079 12.06 5.80779 10.8955 6.63824 10.5773L15.804 7.06521C16.5389 6.78361 17.2164 7.46107 16.9348 8.19598L15.9678 10.7197" stroke="#FF512F" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="wrapper">
+            <h1>Автомобили</h1>
+            <ul class="list__auto">
+                {% for car in cars %}
+                    <li class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ car.model }} <span class="upper">{{ car.state_number }}</span></h2>
+                            <h3 class="card-subtitle mb-2 text-muted">Цвет: <span class="circle" style="background-color: {{ car.color }}"></span></h3>
+                            <h3 class="card-subtitle mb-2 text-muted">Тип авто: <img style="height: 20px; margin-left: 10px;" src="/media/{{ car.category }}.png"></h3>
+                            <p class="card-text">
+                                Адрес парковки: {{ car.park_address }}
+                            </p>
+                            <a href="#" class="btn mr-2" style="display: block; margin-bottom: 20px"><i class="fas fa-link"></i> Связаться с главным</a>
+                            <form name="order" action="/order/{{ car.state_number }}" class="btn " style="display: block;" method="GET">
+                                <span style="cursor: pointer" onclick="document.forms['order'].submit();">
+                                    <i class="fab fa-github"></i> Забронировать авто
+                                </span>
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

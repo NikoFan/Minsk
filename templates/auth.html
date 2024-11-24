@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Вход</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ececec;
+    }
+
+    .container {
+      width: 400px;
+      height: 480px;
+      position: relative;
+      margin: 6% auto;
+      background: #fff;
+      padding: 5px;
+      overflow: hidden;
+      border: 1px solid #f1f1f1;
+      box-shadow: 0 0 20px 0 #e4e4e4;
+    }
+
+    .tabs {
+      width: max-content;
+      margin: 35px auto;
+      position: relative;
+      box-shadow: 0 0 15px #cacaca;
+      border-radius: 30px;
+    }
+
+    .toggle-btn {
+      padding: 10px 30px;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      outline: none;
+      position: relative;
+    }
+
+    #btn {
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, #ff105e, #ffad05);
+      border-radius: 30px;
+      transition: .5s;
+    }
+
+    .social-icons {
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    .social-icons i{
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      color: #fff;
+      margin: 0 12px;
+      background: #333;
+      border-radius: 50%;
+      transition: .5s;
+    }
+
+    .form {
+      top: 180px;
+      position: absolute;
+      width: 280px;
+      transition: .5s;
+    }
+
+    .input-filed {
+      width: 100%;
+      padding: 10px 0;
+      margin: 5px 0;
+      border-left: 0;
+      border-top: 0;
+      border-right: 0;
+      border-bottom: 1px solid #999;
+      outline: none;
+      background: transparent;
+    }
+
+    .submit-btn {
+      width: 85%;
+      padding: 10px 30px;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+      background: linear-gradient(to right, #ff105e, #ffad05);
+      border: 0;
+      outline: none;
+      border-radius: 30px;
+    }
+
+    .check-box {
+      margin: 30px 10px 30px 0;
+    }
+
+    span {
+      color: #777;
+      font-size: 12px;
+      bottom: 68px;
+      position: absolute;
+    }
+
+    #login {
+      left: 50px;
+    }
+
+    #register {
+      left: 450px;
+    }
+    
+    .custom-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .custom-button:hover {
+        background-color: #45a049;
+    }
+    
+    .custom-alert {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .custom-alert-content {
+        background-color: #fefefe;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 8px;
+        position: relative;
+    
+    }
+    
+    .close {
+        position: absolute;
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        top: 2%;
+        right: 5%;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    #alertMessage {
+        color: #d1410e;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tabs">
+      <div id="btn"></div>
+      <button type="button" class="toggle-btn" onclick="login()">Войти в аккаунт</button>
+      <button type="button" class="toggle-btn" onclick="registration()">Новый аккаунт</button>
+    </div>
+    <div class="social-icons">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+    </div>
+
+    <form id="login" class="form" action="/login/" method="POST">
+      {% csrf_token %} 
+      <input type="text" name="username" class="input-filed" placeholder="Введите логин" required>
+      <input type="password" name="password" class="input-filed" placeholder="Введите пароль" required>
+      <input type="checkbox" class="check-box"><span>Запомнить пароль</span>
+      <button type="submit" class="submit-btn">Войти</button>
+    </form>
+
+    <form id="register" class="form" action="/register/" method="POST">
+      {% csrf_token %}   
+      <input type="text" name="username" class="input-filed" placeholder="Придумайте логин" required>
+      <input type="password" name="password" class="input-filed" placeholder="Придумайте пароль" required>
+      <input type="email" name="email" class="input-filed" placeholder="Введите почту" required>
+      <input type="checkbox" class="check-box" required><span>Я соглашаюсь с условиями и политикой</span>
+      <button type="submit" class="submit-btn">Создать</button>
+    </form>
+  </div>
+  <div id="customAlertBox" class="custom-alert">
+        <div class="custom-alert-content">
+            <span class="close">&times;</span>
+            <p id="alertMessage"></p>
+        </div>
+  </div>
+  <script>
+        const alertBox =
+            document.getElementById("customAlertBox");
+        const alert_Message_container =
+            document.getElementById("alertMessage");
+        const close_img =
+            document.querySelector(".close");
+        const body =
+            document.querySelector("body");
+        
+        const text = `
+            {% for title, errors in errors.items %}
+                {% for error in errors %}
+                   {{ error }}<br><br>
+                {% endfor %}
+            {% endfor %}
+            `
+
+        close_img.addEventListener('click', function () {
+                alertBox.style.display = "none";
+        });
+  </script>  
+  <script>
+    const logIn = document.getElementById("login");
+    const register = document.getElementById("register");
+    const button = document.getElementById("btn");
+
+    function registration() {
+      logIn.style.left = "-400px";
+      register.style.left = "50px";
+      button.style.left = "50%";
+    }
+
+    function login() {
+      logIn.style.left = "50px";
+      register.style.left = "450px";
+      button.style.left = "0";
+    }
+    
+    window.onload = () => {
+        if (window.location.pathname.includes("register")) {
+            registration()
+        }
+        console.log(text)
+        if (`{{ errors }}` !== '') {
+            alert_Message_container.innerHTML = text;
+            alertBox.style.display = "flex";
+        }
+    }
+  </script>
+</body>
+
+</html>
